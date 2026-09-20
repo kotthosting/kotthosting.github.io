@@ -1,133 +1,76 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Hugo Client – Minecraft-mod. Ladda ner klienten och kom igång.">
-  <title>Hugo Client — Minecraft Mod</title>
-  <style>
-    :root {
-      --bg:#07050d; --panel:#100c1d; --purple:#8b35ff; --violet:#c06cff;
-      --text:#f7f3ff; --muted:#aaa0bb; --line:#2a1d3f;
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      margin:0; color:var(--text); background:
-        radial-gradient(circle at 80% 10%, #3b1370 0, transparent 32%),
-        radial-gradient(circle at 10% 30%, #1b0d38 0, transparent 30%),
-        var(--bg);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    }
-    a { color:inherit; text-decoration:none; }
-    nav {
-      position:sticky; top:0; z-index:20; backdrop-filter:blur(16px);
-      background:rgba(7,5,13,.75); border-bottom:1px solid rgba(139,53,255,.18);
-    }
-    .nav-inner { max-width:1120px; margin:auto; padding:16px 22px; display:flex; align-items:center; justify-content:space-between; }
-    .brand { font-weight:900; letter-spacing:.08em; }
-    .brand span { color:var(--violet); }
-    .links { display:flex; gap:24px; color:var(--muted); font-size:14px; }
-    .links a:hover { color:#fff; }
-    .hero { max-width:1120px; min-height:760px; margin:auto; padding:70px 22px 50px; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:50px; }
-    .eyebrow { color:#b979ff; text-transform:uppercase; letter-spacing:.22em; font-weight:800; font-size:12px; }
-    h1 { font-size:clamp(56px,8vw,108px); line-height:.85; margin:18px 0; letter-spacing:-.06em; }
-    h1 span { color:var(--violet); }
-    .lead { color:var(--muted); font-size:19px; line-height:1.65; max-width:580px; }
-    .buttons { display:flex; gap:14px; flex-wrap:wrap; margin:30px 0; }
-    .btn { padding:15px 23px; border-radius:12px; font-weight:800; border:1px solid var(--line); }
-    .primary { background:linear-gradient(135deg,#7b20ff,#b85dff); box-shadow:0 12px 35px rgba(139,53,255,.3); }
-    .secondary { background:#110d1d; color:#ddd3e9; }
-    .meta { display:flex; gap:12px; flex-wrap:wrap; }
-    .pill { border:1px solid var(--line); background:rgba(255,255,255,.025); padding:9px 12px; border-radius:999px; color:#c9bfd5; font-size:13px; }
-    .art { display:flex; justify-content:center; }
-    .art img { width:min(520px,100%); border-radius:28px; box-shadow:0 35px 90px rgba(83,20,170,.35); border:1px solid #352051; }
-    section { max-width:1120px; margin:auto; padding:80px 22px; }
-    .section-title { font-size:40px; margin:0 0 12px; }
-    .section-sub { color:var(--muted); margin:0 0 35px; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .card { background:linear-gradient(180deg,rgba(24,17,39,.9),rgba(12,9,20,.9)); border:1px solid var(--line); border-radius:18px; padding:25px; }
-    .icon { font-size:27px; }
-    .card h3 { margin:15px 0 8px; }
-    .card p { color:var(--muted); line-height:1.6; }
-    .download { text-align:center; background:linear-gradient(135deg,#160d27,#0c0815); border:1px solid #392050; border-radius:28px; padding:55px 25px; }
-    .download .btn { display:inline-block; margin-top:20px; }
-    .steps { counter-reset:step; }
-    .step { display:flex; gap:18px; margin:18px 0; }
-    .num { min-width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:#7b20ff; font-weight:900; }
-    footer { border-top:1px solid var(--line); color:#837991; text-align:center; padding:30px 20px; }
-    @media(max-width:800px) {
-      .links { display:none; }
-      .hero { grid-template-columns:1fr; padding-top:50px; min-height:auto; }
-      .grid { grid-template-columns:1fr; }
-      .art { order:-1; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hugo Client — Minecraft Hack Mod</title>
+<style>
+:root{--bg:#05030a;--panel:#0e0918;--purple:#8b35ff;--violet:#c35cff;--text:#f8f4ff;--muted:#aaa0bb;--line:#2b1b42}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#35105e,transparent 40%),var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:rgba(5,3,10,.8);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{max-width:1100px;margin:auto;padding:17px 22px;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;letter-spacing:.08em}.logo span{color:var(--violet)}
+.nav a{color:#b8aec6;text-decoration:none;margin-left:22px;font-size:14px}.nav a:hover{color:#fff}
+.hero{max-width:1100px;margin:auto;min-height:760px;padding:80px 22px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px}
+.badge{display:inline-block;padding:8px 13px;border:1px solid #7130b8;background:#1a0c2b;color:#d59bff;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(58px,9vw,110px);line-height:.82;letter-spacing:-.07em;margin:20px 0}h1 span{color:var(--violet)}
+.lead{font-size:20px;line-height:1.6;color:var(--muted);max-width:600px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}.btn{display:inline-block;text-decoration:none;padding:15px 22px;border-radius:12px;font-weight:900}.primary{background:linear-gradient(135deg,#7520ff,#bd55ff);box-shadow:0 15px 45px #6f20c044}.secondary{border:1px solid var(--line);color:#ddd4e8;background:#100b18}.art img{width:100%;border-radius:25px;border:1px solid #3a2055;box-shadow:0 30px 90px #5c18aa44}
+.pills{display:flex;gap:9px;flex-wrap:wrap}.pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:#bdb3ca;font-size:13px}
+section{max-width:1100px;margin:auto;padding:80px 22px}.title{font-size:42px;margin:0 0 10px}.sub{color:var(--muted);margin-bottom:35px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:25px;border:1px solid var(--line);background:linear-gradient(180deg,#130d20,#0a0710);border-radius:18px}.card .i{font-size:30px}.card h3{margin:14px 0 8px}.card p{color:var(--muted);line-height:1.55}
+.download{text-align:center;padding:60px 25px;border:1px solid #45235f;border-radius:25px;background:linear-gradient(135deg,#160b27,#090610)}
+.notice{margin-top:20px;color:#877c92;font-size:13px}
+footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:#766b82}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding-top:50px}.art{order:-1}.grid{grid-template-columns:1fr}.navlinks{display:none}}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a class="brand" href="#">HUGO <span>CLIENT</span></a>
-      <div class="links">
-        <a href="#features">Features</a>
-        <a href="#download">Ladda ner</a>
-        <a href="#install">Installation</a>
-      </div>
-    </div>
-  </nav>
+<nav><div class="nav">
+<div class="logo">HUGO <span>CLIENT</span></div>
+<div class="navlinks"><a href="#features">Features</a><a href="#download">Download</a><a href="#about">Om</a></div>
+</div></nav>
 
-  <main>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Minecraft Mod</div>
-        <h1>HUGO<br><span>CLIENT</span></h1>
-        <p class="lead">En enkel och stilren Minecraft-mod. Ladda ner Hugo Client och installera den på din Fabric-klient.</p>
-        <div class="buttons">
-          <a class="btn primary" href="hugo-client.jar" download>↓ Ladda ner Hugo Client</a>
-          <a class="btn secondary" href="#install">Hur installerar jag?</a>
-        </div>
-        <div class="meta">
-          <div class="pill">Minecraft 1.21.x</div>
-          <div class="pill">Fabric</div>
-          <div class="pill">JAR · 24.2 MB</div>
-        </div>
-      </div>
-      <div class="art">
-        <img src="hc-logo.png" alt="Hugo Client HC-logga">
-      </div>
-    </section>
+<main>
+<section class="hero">
+<div>
+<span class="badge">Minecraft Hack Mod</span>
+<h1>HUGO<br><span>CLIENT</span></h1>
+<p class="lead"><b>Hugo Client är en Minecraft hack mod/client</b> med ett mörkt gaming-tema och en samling klientfunktioner för Minecraft.</p>
+<div class="buttons">
+<a class="btn primary" href="hugo-client.jar" download>↓ Ladda ner Hugo Client</a>
+<a class="btn secondary" href="#features">Se features</a>
+</div>
+<div class="pills"><span class="pill">Minecraft 1.21</span><span class="pill">Fabric</span><span class="pill">JAR</span></div>
+</div>
+<div class="art"><img src="hc-logo.png" alt="Hugo Client HC"></div>
+</section>
 
-    <section id="features">
-      <h2 class="section-title">Vad är Hugo Client?</h2>
-      <p class="section-sub">En mod-sida som håller det enkelt: ladda ner filen och kom igång.</p>
-      <div class="grid">
-        <article class="card"><div class="icon">⚡</div><h3>Smidig</h3><p>Snabb och enkel installation utan onödiga steg.</p></article>
-        <article class="card"><div class="icon">🎨</div><h3>Hugo-design</h3><p>En egen visuell identitet med HC-loggan och lila tema.</p></article>
-        <article class="card"><div class="icon">🧩</div><h3>Fabric</h3><p>Gjort för en Fabric-baserad Minecraft-installation.</p></article>
-      </div>
-    </section>
+<section id="features">
+<h2 class="title">Hack Client Features</h2>
+<p class="sub">En tydlig översikt över vad Hugo Client är byggd för.</p>
+<div class="grid">
+<article class="card"><div class="i">⚔️</div><h3>Combat</h3><p>Klientfunktioner med fokus på Minecraft-combat och kontroll.</p></article>
+<article class="card"><div class="i">👁️</div><h3>Visuals</h3><p>Extra visuella funktioner och HUD-anpassningar.</p></article>
+<article class="card"><div class="i">⚙️</div><h3>Client Settings</h3><p>Konfigurera klientens funktioner efter din egen spelstil.</p></article>
+<article class="card"><div class="i">🚀</div><h3>Movement</h3><p>Klientverktyg för rörelse och olika gameplay-inställningar.</p></article>
+<article class="card"><div class="i">🎯</div><h3>Utilities</h3><p>Praktiska verktyg som samlar flera funktioner i en klient.</p></article>
+<article class="card"><div class="i">💜</div><h3>Hugo UI</h3><p>Ett eget lila/svart gränssnitt som matchar Hugo Client.</p></article>
+</div>
+</section>
 
-    <section id="download">
-      <div class="download">
-        <div class="eyebrow">Senaste versionen</div>
-        <h2 class="section-title">Redo att ladda ner?</h2>
-        <p class="section-sub">Hugo Client · Minecraft 1.21.x · Fabric</p>
-        <a class="btn primary" href="hugo-client.jar" download>↓ Ladda ner hugo-client.jar</a>
-      </div>
-    </section>
+<section id="download">
+<div class="download">
+<span class="badge">Latest Build</span>
+<h2 class="title">Hugo Client</h2>
+<p class="sub">Minecraft Hack Mod · Fabric · 1.21.x</p>
+<a class="btn primary" href="hugo-client.jar" download>↓ Ladda ner hugo-client.jar</a>
+<p class="notice">Använd modden enligt reglerna på den server du spelar på.</p>
+</div>
+</section>
 
-    <section id="install">
-      <h2 class="section-title">Installation</h2>
-      <p class="section-sub">Så installerar du modden lokalt.</p>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><div><b>Installera Fabric</b><br><span style="color:#aaa0bb">Installera Fabric Loader för den Minecraft-version som modden använder.</span></div></div>
-        <div class="step"><div class="num">2</div><div><b>Ladda ner Hugo Client</b><br><span style="color:#aaa0bb">Klicka på nedladdningsknappen ovan och spara JAR-filen.</span></div></div>
-        <div class="step"><div class="num">3</div><div><b>Lägg filen i mods</b><br><span style="color:#aaa0bb">Flytta <code>hugo-client.jar</code> till din Minecraft <code>mods</code>-mapp.</span></div></div>
-        <div class="step"><div class="num">4</div><div><b>Starta Minecraft</b><br><span style="color:#aaa0bb">Starta profilen med Fabric och kontrollera att Hugo Client laddas.</span></div></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2026 Hugo Client · Minecraft-mod</footer>
+<section id="about">
+<h2 class="title">Om Hugo Client</h2>
+<p class="sub">Hugo Client är en Minecraft hack mod/client med fokus på klientbaserade funktioner, visuella inställningar och ett eget gränssnitt.</p>
+</section>
+</main>
+<footer>© 2026 Hugo Client · Minecraft Hack Mod</footer>
 </body>
 </html>
