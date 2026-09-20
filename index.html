@@ -3,106 +3,131 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kotthosting — Hosting som bara fungerar</title>
-  <meta name="description" content="Kotthosting – snabb, enkel och trygg hosting.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Hugo Client – Minecraft-mod. Ladda ner klienten och kom igång.">
+  <title>Hugo Client — Minecraft Mod</title>
+  <style>
+    :root {
+      --bg:#07050d; --panel:#100c1d; --purple:#8b35ff; --violet:#c06cff;
+      --text:#f7f3ff; --muted:#aaa0bb; --line:#2a1d3f;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; color:var(--text); background:
+        radial-gradient(circle at 80% 10%, #3b1370 0, transparent 32%),
+        radial-gradient(circle at 10% 30%, #1b0d38 0, transparent 30%),
+        var(--bg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    a { color:inherit; text-decoration:none; }
+    nav {
+      position:sticky; top:0; z-index:20; backdrop-filter:blur(16px);
+      background:rgba(7,5,13,.75); border-bottom:1px solid rgba(139,53,255,.18);
+    }
+    .nav-inner { max-width:1120px; margin:auto; padding:16px 22px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font-weight:900; letter-spacing:.08em; }
+    .brand span { color:var(--violet); }
+    .links { display:flex; gap:24px; color:var(--muted); font-size:14px; }
+    .links a:hover { color:#fff; }
+    .hero { max-width:1120px; min-height:760px; margin:auto; padding:70px 22px 50px; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:50px; }
+    .eyebrow { color:#b979ff; text-transform:uppercase; letter-spacing:.22em; font-weight:800; font-size:12px; }
+    h1 { font-size:clamp(56px,8vw,108px); line-height:.85; margin:18px 0; letter-spacing:-.06em; }
+    h1 span { color:var(--violet); }
+    .lead { color:var(--muted); font-size:19px; line-height:1.65; max-width:580px; }
+    .buttons { display:flex; gap:14px; flex-wrap:wrap; margin:30px 0; }
+    .btn { padding:15px 23px; border-radius:12px; font-weight:800; border:1px solid var(--line); }
+    .primary { background:linear-gradient(135deg,#7b20ff,#b85dff); box-shadow:0 12px 35px rgba(139,53,255,.3); }
+    .secondary { background:#110d1d; color:#ddd3e9; }
+    .meta { display:flex; gap:12px; flex-wrap:wrap; }
+    .pill { border:1px solid var(--line); background:rgba(255,255,255,.025); padding:9px 12px; border-radius:999px; color:#c9bfd5; font-size:13px; }
+    .art { display:flex; justify-content:center; }
+    .art img { width:min(520px,100%); border-radius:28px; box-shadow:0 35px 90px rgba(83,20,170,.35); border:1px solid #352051; }
+    section { max-width:1120px; margin:auto; padding:80px 22px; }
+    .section-title { font-size:40px; margin:0 0 12px; }
+    .section-sub { color:var(--muted); margin:0 0 35px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { background:linear-gradient(180deg,rgba(24,17,39,.9),rgba(12,9,20,.9)); border:1px solid var(--line); border-radius:18px; padding:25px; }
+    .icon { font-size:27px; }
+    .card h3 { margin:15px 0 8px; }
+    .card p { color:var(--muted); line-height:1.6; }
+    .download { text-align:center; background:linear-gradient(135deg,#160d27,#0c0815); border:1px solid #392050; border-radius:28px; padding:55px 25px; }
+    .download .btn { display:inline-block; margin-top:20px; }
+    .steps { counter-reset:step; }
+    .step { display:flex; gap:18px; margin:18px 0; }
+    .num { min-width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:#7b20ff; font-weight:900; }
+    footer { border-top:1px solid var(--line); color:#837991; text-align:center; padding:30px 20px; }
+    @media(max-width:800px) {
+      .links { display:none; }
+      .hero { grid-template-columns:1fr; padding-top:50px; min-height:auto; }
+      .grid { grid-template-columns:1fr; }
+      .art { order:-1; }
+    }
+  </style>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Kotthosting startsida">
-      <span class="brand-mark">K</span>
-      <span>Kotthosting</span>
-    </a>
-    <button class="menu-btn" aria-label="Öppna meny" aria-expanded="false">☰</button>
-    <nav class="links">
-      <a href="#tjanster">Tjänster</a>
-      <a href="#priser">Priser</a>
-      <a href="#status">Status</a>
-      <a href="#kontakt">Kontakt</a>
-      <a class="nav-cta" href="#priser">Kom igång</a>
-    </nav>
-  </header>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#">HUGO <span>CLIENT</span></a>
+      <div class="links">
+        <a href="#features">Features</a>
+        <a href="#download">Ladda ner</a>
+        <a href="#install">Installation</a>
+      </div>
+    </div>
+  </nav>
 
-  <main id="top">
+  <main>
     <section class="hero">
-      <div class="glow"></div>
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="dot"></span> Gratis hosting från skogen. Byggt för fart.</div>
-        <h1>Din webb.<br><span>Din server.</span><br>Ditt Kott.</h1>
-        <p class="lead">Gratis hosting utan krångel. Du får en server med upp till 4 GB RAM och enkel hantering.</p>
-        <div class="actions">
-          <a class="btn primary" href="#priser">Se våra paket <span>→</span></a>
-          <a class="btn ghost" href="#tjanster">Utforska tjänster</a>
+      <div>
+        <div class="eyebrow">Minecraft Mod</div>
+        <h1>HUGO<br><span>CLIENT</span></h1>
+        <p class="lead">En enkel och stilren Minecraft-mod. Ladda ner Hugo Client och installera den på din Fabric-klient.</p>
+        <div class="buttons">
+          <a class="btn primary" href="hugo-client.jar" download>↓ Ladda ner Hugo Client</a>
+          <a class="btn secondary" href="#install">Hur installerar jag?</a>
         </div>
-        <div class="trust">
-          <div><strong>0 kr</strong><span>Pris</span></div>
-          <div><strong>4 GB</strong><span>Max RAM</span></div>
-          <div><strong>24/7</strong><span>Övervakning</span></div>
+        <div class="meta">
+          <div class="pill">Minecraft 1.21.x</div>
+          <div class="pill">Fabric</div>
+          <div class="pill">JAR · 24.2 MB</div>
         </div>
       </div>
-      <div class="server-card">
-        <div class="card-top"><span>● LIVE</span><span>kotthosting.se</span></div>
-        <div class="server-orb"><div class="orb-core">K</div></div>
-        <div class="metrics">
-          <div><span>CPU</span><strong>18%</strong><i><b style="width:18%"></b></i></div>
-          <div><span>RAM</span><strong>42%</strong><i><b style="width:42%"></b></i></div>
-          <div><span>DISK</span><strong>27%</strong><i><b style="width:27%"></b></i></div>
-        </div>
-        <div class="server-foot"><span>Stockholm • SE</span><span class="online">● Online</span></div>
+      <div class="art">
+        <img src="hc-logo.png" alt="Hugo Client HC-logga">
       </div>
     </section>
 
-    <section id="tjanster" class="section">
-      <div class="section-head">
-        <div><p class="eyebrow">VARFÖR KOTTHOSTING?</p><h2>Hosting med <em>substans.</em></h2></div>
-        <p>Allt du behöver för att få din webbplats eller server online – utan onödigt trassel.</p>
-      </div>
-      <div class="features">
-        <article><div class="icon">⚡</div><h3>Snabbt på riktigt</h3><p>Optimerade servrar och modern infrastruktur ger korta laddtider.</p></article>
-        <article><div class="icon">🛡</div><h3>Skyddat dygnet runt</h3><p>DDoS-skydd, övervakning och automatiska säkerhetsrutiner.</p></article>
-        <article><div class="icon">⌘</div><h3>Enkelt att hantera</h3><p>En tydlig kontrollpanel där du har koll på allt på ett ställe.</p></article>
-        <article><div class="icon">✦</div><h3>Mänsklig support</h3><p>Få hjälp av riktiga människor när du behöver det.</p></article>
+    <section id="features">
+      <h2 class="section-title">Vad är Hugo Client?</h2>
+      <p class="section-sub">En mod-sida som håller det enkelt: ladda ner filen och kom igång.</p>
+      <div class="grid">
+        <article class="card"><div class="icon">⚡</div><h3>Smidig</h3><p>Snabb och enkel installation utan onödiga steg.</p></article>
+        <article class="card"><div class="icon">🎨</div><h3>Hugo-design</h3><p>En egen visuell identitet med HC-loggan och lila tema.</p></article>
+        <article class="card"><div class="icon">🧩</div><h3>Fabric</h3><p>Gjort för en Fabric-baserad Minecraft-installation.</p></article>
       </div>
     </section>
 
-    <section id="priser" class="section pricing">
-      <div class="section-head centered">
-        <div><p class="eyebrow">ALLTID GRATIS</p><h2>En enkel <em>kotte.</em></h2></div>
-        <p>Ingen betalning och inga premiumplaner. Alla får samma tydliga grund: upp till 4 GB RAM.</p>
+    <section id="download">
+      <div class="download">
+        <div class="eyebrow">Senaste versionen</div>
+        <h2 class="section-title">Redo att ladda ner?</h2>
+        <p class="section-sub">Hugo Client · Minecraft 1.21.x · Fabric</p>
+        <a class="btn primary" href="hugo-client.jar" download>↓ Ladda ner hugo-client.jar</a>
       </div>
-      <div class="plans single-plan">
-        <article class="plan featured">
-          <span class="popular">GRATIS</span>
-          <span class="tag">FREE</span>
-          <h3>Kotthosting</h3>
-          <p>Gratis hosting för dina projekt.</p>
-          <div class="price">0 kr <small>/ mån</small></div>
-          <ul>
-            <li>Upp till 4 GB RAM</li>
-            <li>Snabb lagring</li>
-            <li>DDoS-skydd</li>
-            <li>24/7 serverövervakning</li>
-            <li>Enkel kontrollpanel</li>
-          </ul>
-          <a href="#kontakt" class="btn primary full">Kom igång <span>→</span></a>
-        </article>
-      </div>
-      <p class="limit-note">Obs: 4 GB RAM är den maximala RAM-mängden per server på Kotthosting.</p>
     </section>
 
-    <section id="status" class="status section">
-      <div><div class="status-live"><span class="pulse"></span> ALLA SYSTEM FUNGERAR</div><h2>Serverstatus</h2><p>Senast kontrollerad: just nu</p></div>
-      <div class="status-grid"><div><span>Webbhosting</span><b>Operativ</b></div><div><span>DNS</span><b>Operativ</b></div><div><span>Kontrollpanel</span><b>Operativ</b></div></div>
-    </section>
-
-    <section id="kontakt" class="cta section">
-      <p class="eyebrow">REDO ATT KÖRA?</p><h2>Plantera din nästa<br><em>webbplats.</em></h2>
-      <p>Skapa din server gratis och håll dig inom 4 GB RAM.</p>
-      <a class="btn primary" href="mailto:hej@kotthosting.se">Kontakta oss <span>→</span></a>
+    <section id="install">
+      <h2 class="section-title">Installation</h2>
+      <p class="section-sub">Så installerar du modden lokalt.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>Installera Fabric</b><br><span style="color:#aaa0bb">Installera Fabric Loader för den Minecraft-version som modden använder.</span></div></div>
+        <div class="step"><div class="num">2</div><div><b>Ladda ner Hugo Client</b><br><span style="color:#aaa0bb">Klicka på nedladdningsknappen ovan och spara JAR-filen.</span></div></div>
+        <div class="step"><div class="num">3</div><div><b>Lägg filen i mods</b><br><span style="color:#aaa0bb">Flytta <code>hugo-client.jar</code> till din Minecraft <code>mods</code>-mapp.</span></div></div>
+        <div class="step"><div class="num">4</div><div><b>Starta Minecraft</b><br><span style="color:#aaa0bb">Starta profilen med Fabric och kontrollera att Hugo Client laddas.</span></div></div>
+      </div>
     </section>
   </main>
 
-  <footer><div class="brand"><span class="brand-mark">K</span><span>Kotthosting</span></div><span>© 2026 Kotthosting. Byggt med kärlek från Dalarna.</span><div><a href="#">Integritet</a> <a href="#">Villkor</a></div></footer>
-  <script src="script.js"></script>
+  <footer>© 2026 Hugo Client · Minecraft-mod</footer>
 </body>
 </html>
