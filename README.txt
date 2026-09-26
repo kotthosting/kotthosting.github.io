@@ -1,0 +1,1 @@
+Client webbplats. Ladda upp index.html, style.css, script.js och hela files-mappen till samma GitHub Pages-repository. Download-länkarna använder URL-kodade filnamn så mellanslag och parenteser fungerar.
