@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patapim Client — Brr Brr Patapim</title>
+<style>
+:root{
+  --green:#35c759;
+  --green-dark:#0b351c;
+  --brown:#5a321c;
+  --brown-dark:#24140d;
+  --cream:#f2e4c9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--cream);
+  background:
+    radial-gradient(circle at 20% 10%,rgba(53,199,89,.18),transparent 28%),
+    radial-gradient(circle at 80% 25%,rgba(126,75,38,.22),transparent 30%),
+    linear-gradient(135deg,var(--brown-dark),#102716 55%,#06130b);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;opacity:.12;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:24px 24px;
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 7%;
+  background:rgba(10,25,15,.78);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(53,199,89,.25);
+}
+.logo{font-size:1.25rem;font-weight:900;color:var(--green);letter-spacing:1px}
+.logo span{color:#a96d3d}
+nav a{color:var(--cream);text-decoration:none;margin-left:24px;font-weight:700}
+nav a:hover{color:var(--green)}
+.hero{
+  min-height:100vh;display:grid;place-items:center;text-align:center;
+  padding:120px 20px 70px;position:relative;
+}
+.badge{
+  display:inline-block;padding:8px 14px;border-radius:999px;
+  background:rgba(53,199,89,.12);border:1px solid rgba(53,199,89,.5);
+  color:#7cff9c;font-weight:800;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(3.2rem,10vw,8rem);line-height:.86;
+  font-weight:1000;letter-spacing:-6px;
+  text-transform:uppercase;
+  text-shadow:0 8px 0 #321a0e,0 0 35px rgba(53,199,89,.35);
+}
+h1 .green{color:var(--green)}
+h1 .brown{color:#a96d3d}
+.subtitle{
+  max-width:720px;margin:28px auto;color:#d8cbb5;
+  font-size:1.15rem;line-height:1.7;
+}
+.buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-block;padding:15px 25px;border-radius:12px;
+  text-decoration:none;font-weight:900;border:2px solid var(--green);
+  transition:.2s transform,.2s box-shadow;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(53,199,89,.22)}
+.primary{background:var(--green);color:#07150b}
+.secondary{background:#4b2918;color:var(--cream);border-color:#8b5a34}
+section{padding:90px 7%;position:relative}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:45px}
+.section-title span{color:var(--green)}
+.grid{
+  max-width:1100px;margin:auto;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  padding:28px;border-radius:18px;
+  background:linear-gradient(145deg,rgba(29,79,43,.7),rgba(75,41,24,.65));
+  border:1px solid rgba(53,199,89,.25);
+  box-shadow:0 15px 45px rgba(0,0,0,.2);
+}
+.icon{font-size:2rem;margin-bottom:15px}
+.card h3{margin-bottom:10px;color:#7cff9c}
+.card p{color:#cdbda5;line-height:1.6}
+.download{
+  max-width:900px;margin:auto;text-align:center;
+  padding:55px 25px;border-radius:25px;
+  background:linear-gradient(135deg,#174d2a,#55301a);
+  border:2px solid rgba(53,199,89,.35);
+}
+.download h2{font-size:3rem;margin-bottom:12px}
+.download p{color:#ddcfb8;margin-bottom:25px}
+footer{text-align:center;padding:35px 20px;color:#8f836f;border-top:1px solid rgba(255,255,255,.08)}
+.patapim{
+  position:absolute;opacity:.07;font-size:clamp(5rem,20vw,16rem);
+  font-weight:1000;white-space:nowrap;pointer-events:none;
+}
+.one{top:16%;left:-5%;transform:rotate(-8deg)}
+.two{bottom:8%;right:-8%;transform:rotate(8deg)}
+@media(max-width:800px){
+  nav{padding:16px 5%}nav a{margin-left:10px;font-size:.85rem}
+  .grid{grid-template-columns:1fr}
+  h1{letter-spacing:-3px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">🗿 PATAPIM <span>CLIENT</span></div>
+  <div>
+    <a href="#features">Features</a>
+    <a href="#download">Download</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="patapim one">BRR BRR</div>
+  <div class="patapim two">PATAPIM</div>
+  <div>
+    <div class="badge">🗿 THE BRR BRR EXPERIENCE</div>
+    <h1><span class="green">BRR BRR</span><br><span class="brown">PATAPIM</span></h1>
+    <p class="subtitle">
+      Welcome to Patapim Client — a chaotic Minecraft client with a ridiculous
+      Brr Brr Patapim-inspired green and brown style.
+    </p>
+    <div class="buttons">
+      <a class="btn primary" href="#download">⬇ DOWNLOAD CLIENT</a>
+      <a class="btn secondary" href="#features">⚡ FEATURES</a>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <h2 class="section-title">PATAPIM <span>FEATURES</span></h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🗿</div>
+      <h3>Brr Brr Mode</h3>
+      <p>Maximum Patapim energy with a bold green-and-brown interface.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Fast & Clean</h3>
+      <p>A simple client landing page designed to feel quick and chaotic.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌿</div>
+      <h3>Patapim Theme</h3>
+      <p>Dark forest greens, earthy browns, glowing buttons and meme energy.</p>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="download">
+    <h2>READY TO GO BRR?</h2>
+    <p>Download the official Patapim Client directly from this page.</p>
+    <a class="btn primary" href="Patapim-Client.jar" download>⬇ DOWNLOAD PATAPIM CLIENT</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 Patapim Client · BRR BRR PATAPIM 🗿
+</footer>
+</body>
+</html>
