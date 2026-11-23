@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallkotten | Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">TALLKOTTEN<span>.</span></div>
+    <nav>
+        <a href="#home">Hem</a>
+        <a href="#about">Om servern</a>
+        <a href="#ranks">Ranker</a>
+        <a href="#play">Spela</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="tag">SVENSK MINECRAFT SERVER</p>
+        <h1>Välkommen till<br><span>Tallkotten.</span></h1>
+        <p class="description">
+            Upplev ett fantastiskt Survival-äventyr.
+            Bygg, utforska och skapa din egen historia!
+        </p>
+
+        <div class="buttons">
+            <a href="#play" class="btn">Börja spela →</a>
+            <a href="https://discord.gg/EVhvRcwjm" class="btn discord">Discord</a>
+        </div>
+
+        <div class="ip-box">
+            <span>tallkotten.doomhosting.se</span>
+            <button onclick="copyIP()">KOPIERA IP</button>
+        </div>
+        <p id="copy-message"></p>
+    </div>
+
+    <div class="logo-art">
+        <div class="big-t">T</div>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <p class="tag">OM SERVERN</p>
+    <h2>Mer än bara <span>Survival.</span></h2>
+    <p class="section-text">
+        Tallkotten är en Minecraft-server där du kan spela
+        Survival, träffa nya spelare och bygga ditt eget imperium.
+    </p>
+
+    <div class="features">
+        <div class="feature">
+            <h3>⚒ Survival</h3>
+            <p>Samla resurser och bygg din bas.</p>
+        </div>
+        <div class="feature">
+            <h3>✦ Äventyr</h3>
+            <p>Utforska världen och upptäck nya platser.</p>
+        </div>
+        <div class="feature">
+            <h3>♧ Community</h3>
+            <p>Spela tillsammans med andra.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="ranks">
+    <p class="tag">RANKSYSTEM</p>
+    <h2>Välj din <span>rank.</span></h2>
+
+    <div class="ranks">
+        <div class="rank">
+            <h3>Nova</h3>
+            <h2>13 000</h2>
+            <p>mynt</p>
+        </div>
+        <div class="rank">
+            <h3>Cosmos</h3>
+            <h2>45 000</h2>
+            <p>mynt</p>
+        </div>
+        <div class="rank featured">
+            <h3>Comet</h3>
+            <h2>85 000</h2>
+            <p>mynt</p>
+        </div>
+        <div class="rank">
+            <h3>Meteor</h3>
+            <h2>450 000</h2>
+            <p>mynt</p>
+        </div>
+        <div class="rank">
+            <h3>Galax</h3>
+            <h2>970 000</h2>
+            <p>mynt</p>
+        </div>
+    </div>
+    <p class="small">Rankerna köps med mynt inne på servern.</p>
+</section>
+
+<section class="join" id="play">
+    <p class="tag">REDO ATT SPELA?</p>
+    <h2>Vi ses på <span>Tallkotten.</span></h2>
+    <p>Server-IP:</p>
+    <div class="join-ip">tallkotten.doomhosting.se</div>
+    <button class="btn" onclick="copyIP()">Kopiera IP</button>
+    <br><br>
+    <a href="https://discord.gg/EVhvRcwjm" class="discord-link">
+        Gå med i vår Discord →
+    </a>
+</section>
+
+<footer>
+    <div class="logo">TALLKOTTEN<span>.</span></div>
+    <p>© 2026 Tallkotten</p>
+</footer>
+
+<script>
+function copyIP() {
+    navigator.clipboard.writeText("tallkotten.doomhosting.se");
+    document.getElementById("copy-message").innerText =
+        "IP-adressen har kopierats!";
+}
+</script>
+
+</body>
+</html>
